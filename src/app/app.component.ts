@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {NgFor, NgIf} from "@angular/common";
 import {Motorcycle} from "./models/motorcycle";
+import {MotorcyleListComponent} from "./motorcyle-list/motorcyle-list.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,NgFor,NgIf],
+  imports: [RouterOutlet, NgFor, NgIf, MotorcyleListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

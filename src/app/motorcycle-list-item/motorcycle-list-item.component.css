@@ -1,0 +1,9 @@
+:host{
+  width: 100%;
+  display: block;
+}
+
+.sujalk{
+  display: flex;
+  flex-direction: column;
+}

@@ -1,4 +1,7 @@
-<app-motorcycle-list-item [motorcycle]="motorcyle1">{{motorcycleList[0]}}</app-motorcycle-list-item>
-<app-motorcycle-list-item [motorcycle]="motorcyle2">{{motorcycleList[1]}}</app-motorcycle-list-item>
-<app-motorcycle-list-item [motorcycle]="motorcyle3">{{motorcycleList[2]}}</app-motorcycle-list-item>
-<app-motorcycle-list-item [motorcycle]="motorcyle4">{{motorcycleList[3]}}</app-motorcycle-list-item>
+<img src="https://cdn.pixabay.com/photo/2021/08/23/11/40/motorcycle-6567594_1280.jpg" width="450px">
+<div class="sujalk">
+  <app-motorcycle-list-item *ngFor="let motorcycle of motorcycleList; let i = index"
+                            [motorcycle]="motorcycle"
+                            [ngClass]="{'green-background': i %2 !==0,'yellow-background': i % 2 === 0}"></app-motorcycle-list-item>
+
+</div>
