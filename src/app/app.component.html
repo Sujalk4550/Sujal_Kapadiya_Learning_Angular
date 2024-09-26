@@ -1,3 +1,18 @@
-<h1>{{title}}</h1><br>
-<p>{{name}}</p><br>
-<p>{{age}}</p>
+<!DOCTYPE HTML>
+<html>
+<body>
+<div class="first">
+  <div *ngFor="let motorcycle of motorcycleList">
+    <div>
+      {{motorcycle.brand}}
+      {{motorcycle.name}}
+      {{motorcycle.colour}}
+      {{motorcycle.type}}
+      {{motorcycle.petrol}}
+    </div>
+    <div *ngIf="motorcycle.petrol == true">This motorcycle is run by petrol</div>
+    <div *ngIf="motorcycle.petrol == false">This motorcycle is not run by petrol</div>
+  </div>
+</div>
+</body>
+</html>

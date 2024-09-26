@@ -18,6 +18,6 @@ export class AppComponent {
   motorcyle5: Motorcycle ={brand:"Honda",name:"Gold Wing",colour:"Back",type:"Touring",petrol:false};
   motorcyle6 :Motorcycle ={brand:"Kawasaki",name:"Ninja ZX-10R",colour:"Green",type:"Sportsbike",petrol:true};
 
-  motocycleList:  Motorcycle[]=[this.motorcyle1,this.motorcyle2,this.motorcyle3,this.motorcyle4,this.motorcyle5,this.motorcyle6]
+  motorcycleList :  Motorcycle[]=[this.motorcyle1,this.motorcyle2,this.motorcyle3,this.motorcyle4,this.motorcyle5,this.motorcyle6]
 
 }
