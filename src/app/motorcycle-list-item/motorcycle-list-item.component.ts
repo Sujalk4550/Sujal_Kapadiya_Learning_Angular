@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Motorcycle} from "../models/motorcycle";
 
 @Component({
   selector: 'app-motorcycle-list-item',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './motorcycle-list-item.component.css'
 })
 export class MotorcycleListItemComponent {
-
+  @Input() motorcycle ?: Motorcycle;
 }
