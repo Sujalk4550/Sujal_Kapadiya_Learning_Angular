@@ -18,6 +18,7 @@ import {MotorcycleService} from "../Services/motorcycle.service";
 export class MotorcycleListComponent {
 
   motorcycleList :  Motorcycle[]=[]
+  //
 
   constructor(private myMotorcycleService: MotorcycleService) {
   }
