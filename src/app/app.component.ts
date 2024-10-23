@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {NgFor, NgIf} from "@angular/common";
-import {Motorcycle} from "./models/motorcycle";
+import {Motorcycle} from "../Shared/models/motorcycle";
 import {MotorcyleListComponent} from "./motorcyle-list/motorcyle-list.component";
 
 @Component({

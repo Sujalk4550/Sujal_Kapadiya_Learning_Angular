@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Motorcycle} from "../models/motorcycle";
+import {Motorcycle} from "../../Shared/models/motorcycle";
 
 @Component({
   selector: 'app-motorcycle-list-item',
