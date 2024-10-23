@@ -1,7 +1,21 @@
-<img src="https://cdn.pixabay.com/photo/2021/08/23/11/40/motorcycle-6567594_1280.jpg" width="450px">
-<div class="sujalk">
-  <app-motorcycle-list-item *ngFor="let motorcycle of motorcycleList; let i = index"
-                            [motorcycle]="motorcycle"
-                            [ngClass]="{'green-background': i %2 !==0,'yellow-background': i % 2 === 0}"></app-motorcycle-list-item>
-
+<div class="SujalK">
+  <h1>All Motorcycle</h1>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>BRAND</th>
+      <th>NAME</th>
+      <th>COLOUR</th>
+      <th>TYPE</th>
+      <th>PETROL</th>
+    </tr>
+    <tr *ngFor="let motorcycle of motorcycleList">
+      <td>{{motorcycle.id}}</td>
+      <td>{{motorcycle.brand}}</td>
+      <td>{{motorcycle.name}}</td>
+      <td>{{motorcycle.colour}}</td>
+      <td>{{motorcycle.type}}</td>
+      <td>{{motorcycle.petrol}}</td>
+    </tr>
+  </table>
 </div>

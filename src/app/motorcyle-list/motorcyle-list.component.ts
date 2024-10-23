@@ -20,5 +20,12 @@ export class MotorcyleListComponent {
 
   constructor(private motorcycleService: MotorcycleService) {
   }
+  ngOnInit(){
+   this.motorcycleService.getMyMotorcycle().subscribe({
+     next:(data: Motorcycle[]) => this.motorcycleList = data ,
+     error: err => console.error("Error in motorcycle",err),
+     complete:() => console.log("All list of motorcycle"),
+   })
+  }
 
 }
