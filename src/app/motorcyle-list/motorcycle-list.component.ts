@@ -1,21 +1,21 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Motorcycle} from "../../Shared/models/motorcycle";
 import {MotorcycleListItemComponent} from "../motorcycle-list-item/motorcycle-list-item.component";
 import {NgClass, NgForOf} from "@angular/common";
 import {MotorcycleService} from "../Services/motorcycle.service";
 
 @Component({
-  selector: 'app-motorcyle-list',
+  selector: 'app-motorcycle-list',
   standalone: true,
   imports: [
     MotorcycleListItemComponent,
     NgClass,
     NgForOf
   ],
-  templateUrl: './motorcyle-list.component.html',
-  styleUrl: './motorcyle-list.component.css'
+  templateUrl: './motorcycle-list.component.html',
+  styleUrl: './motorcycle-list.component.css'
 })
-export class MotorcyleListComponent {
+export class MotorcycleListComponent implements OnInit{
  motorcycleList: Motorcycle[]=[]
 
   constructor(private motorcycleService: MotorcycleService) {

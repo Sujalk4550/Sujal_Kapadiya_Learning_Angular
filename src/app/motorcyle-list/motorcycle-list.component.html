@@ -1,6 +1,7 @@
 <div class="SujalK">
   <h1>All Motorcycle</h1>
   <table>
+    <thead>
     <tr>
       <th>ID</th>
       <th>BRAND</th>
@@ -9,6 +10,8 @@
       <th>TYPE</th>
       <th>PETROL</th>
     </tr>
+    </thead>
+    <tbody>
     <tr *ngFor="let motorcycle of motorcycleList">
       <td>{{motorcycle.id}}</td>
       <td>{{motorcycle.brand}}</td>
@@ -17,5 +20,6 @@
       <td>{{motorcycle.type}}</td>
       <td>{{motorcycle.petrol}}</td>
     </tr>
+    </tbody>
   </table>
 </div>

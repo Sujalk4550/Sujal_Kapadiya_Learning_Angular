@@ -1,0 +1,19 @@
+.SujalK{
+ margin:20px;
+}
+table{
+  width: 10%;
+  border-collapse: collapse;
+  margin: 20px;
+}
+th{
+  border: 2px solid black;
+  padding: 8px;
+  text-align: left;
+}
+td{
+  border: 2px solid black;
+  padding: 8px;
+  text-align: left;
+}
+

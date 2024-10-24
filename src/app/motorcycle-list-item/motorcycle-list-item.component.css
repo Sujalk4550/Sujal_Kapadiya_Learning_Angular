@@ -1,9 +1,7 @@
-:host{
-  width: 100%;
-  display: block;
-}
 
-.sujalk{
+.motor-list{
   display: flex;
   flex-direction: column;
+  padding: 10px;
+  margin-left: 10px;
 }

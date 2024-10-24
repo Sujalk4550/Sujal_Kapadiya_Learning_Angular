@@ -1,8 +1,9 @@
-<div style="border: 2px solid red; padding: 10px;margin: 10px">
-  <h2>{{motorcycle?.brand}}</h2>
-  <p>name : {{motorcycle?.name}}</p>
-  <p>colour:{{motorcycle?.colour}}</p>
-  <p>type:{{motorcycle?.type}}</p>
-  <p>petrol: {{motorcycle?.petrol}}</p>
+<div *ngIf="motorcycle" class="motor-list" >
+  <h2>{{motorcycle.id}}</h2>
+  <p>id : {{motorcycle.id}}</p>
+  <p>name : {{motorcycle.name}}</p>
+  <p>colour:{{motorcycle.colour}}</p>
+  <p>type:{{motorcycle.type}}</p>
+  <p>petrol: {{motorcycle.petrol}}</p>
 </div>
-//
+
