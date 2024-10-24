@@ -1,4 +1,10 @@
-<div class="SujalK">
+<div class="navbar">
+<nav>
+  <a routerLink="/motorcycle" routerLinkActive="active">Motorcycle List</a>
+  <a routerLink="/modify-motorcycle" routerLinkActive="active">Modify Motorcycle</a>
+</nav>
+</div>
+<div class="sujal">
   <h1>{{title}}</h1>
-  <app-motorcycle-list> </app-motorcycle-list>
+  <router-outlet></router-outlet>
 </div>

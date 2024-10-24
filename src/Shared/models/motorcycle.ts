@@ -4,5 +4,6 @@ export interface Motorcycle {
   name : String;
   colour : String;
   type: String;
-  petrol? : boolean;
+  petrol : boolean;
+  image? : string;
 }
