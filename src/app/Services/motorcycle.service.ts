@@ -1,40 +1,43 @@
 import { Injectable } from '@angular/core';
 import {Motorcycle} from "../../Shared/models/motorcycle";
 import {motorcycleList} from "../../Shared/data/mock-motorcycle";
-import {Observable, of} from "rxjs";
+import {catchError, Observable, of, throwError} from "rxjs";
+import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MotorcycleService {
+  private apiUrl = 'api/students';
   private  motors: Motorcycle[] = motorcycleList;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
   getMyMotorcycle(): Observable<Motorcycle[]>{
-    return of (this.motors);
+    return this.http.get<Motorcycle[]>(this.apiUrl).pipe(catchError(this.handleError));
   }
   addMotorcycle(newMotorcycle:Motorcycle) : Observable<Motorcycle>{
-    this.motors.push(newMotorcycle)
-    return of(newMotorcycle);
+    newMotorcycle.id = this.generateNewId();
+    return this.http.post<Motorcycle>(this.apiUrl,newMotorcycle).pipe(catchError(this.handleError));
   }
 
   //Update an Existing user
   updateMotorcycle(updatedMotorcycle: Motorcycle): Observable<Motorcycle | undefined> {
-    const index = this.motors.findIndex(user => user.id === updatedMotorcycle.id);
-    if (index > -1) {
-      this.motors[index] = updatedMotorcycle;
-      return of(updatedMotorcycle);
-    }
-    return of(undefined);
-  }
-  //Delete: Remove a user by ID
-
-  getMotorcycleById(motorcycleId: number): Observable<Motorcycle | undefined> {
-    return of(this.motors.find(motorcycle => motorcycle.id === motorcycleId));
+    const url = `${this.apiUrl}/${updatedMotorcycle.id}`;
+    return this.http.put<Motorcycle>(url,updatedMotorcycle).pipe(catchError(this.handleError));
   }
 
-  generateNewId() {
+
+  getMotorcycleById(motorcycleId: number): Observable<Motorcycle> {
+    return this.http.get<Motorcycle>(`${this.apiUrl}/${motorcycleId}`).pipe(catchError(this.handleError));
+  }
+
+  generateNewId():number {
     return this.motors.length >0 ? Math.max(...this.motors.map(user => user.id)) +1 : 1;
+  }
+
+  private handleError(error: HttpErrorResponse){
+    console.error('API error:',error);
+    return throwError(() => new Error('Server error , please try again'));
   }
 }
 
