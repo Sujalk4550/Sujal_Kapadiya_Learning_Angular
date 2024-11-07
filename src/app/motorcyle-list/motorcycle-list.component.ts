@@ -3,6 +3,9 @@ import {Motorcycle} from "../../Shared/models/motorcycle";
 import {MotorcycleListItemComponent} from "../motorcycle-list-item/motorcycle-list-item.component";
 import {NgClass, NgForOf} from "@angular/common";
 import {MotorcycleService} from "../Services/motorcycle.service";
+import {motorcycleList} from "../../Shared/data/mock-motorcycle";
+import {ActivatedRoute, Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-motorcycle-list',
@@ -18,7 +21,10 @@ import {MotorcycleService} from "../Services/motorcycle.service";
 export class MotorcycleListComponent implements OnInit{
  motorcycleList: Motorcycle[]=[]
 
-  constructor(private motorcycleService: MotorcycleService) {
+  constructor(
+    private motorcycleService: MotorcycleService,
+    private router :Router
+  ) {
   }
   ngOnInit(){
    this.motorcycleService.getMyMotorcycle().subscribe({
@@ -26,6 +32,14 @@ export class MotorcycleListComponent implements OnInit{
      error: err => console.error("Error in motorcycle",err),
      complete:() => console.log("All list of motorcycle"),
    })
+  }
+
+  delete(id: Number):void {
+    this.motorcycleList = this.motorcycleList.filter(motorcycle => motorcycle.id!==id);
+  }
+
+  update(): void{
+    this.router.navigate(['/modify-motorcycle']);
   }
 
 }

@@ -11,29 +11,30 @@ export class MotorcycleService {
 
   constructor() { }
   getMyMotorcycle(): Observable<Motorcycle[]>{
-    return of (motorcycleList);
+    return of (this.motors);
   }
-  addMotorcycle(newMotorcycle:Motorcycle) : Observable<Motorcycle[]>{
+  addMotorcycle(newMotorcycle:Motorcycle) : Observable<Motorcycle>{
     this.motors.push(newMotorcycle)
-    return of(this.motors);
+    return of(newMotorcycle);
   }
 
   //Update an Existing user
-  updateMotorcycle(updatedMotorcycle: Motorcycle): Observable<Motorcycle[]> {
+  updateMotorcycle(updatedMotorcycle: Motorcycle): Observable<Motorcycle | undefined> {
     const index = this.motors.findIndex(user => user.id === updatedMotorcycle.id);
-    if (index !== -1) {
+    if (index > -1) {
       this.motors[index] = updatedMotorcycle;
+      return of(updatedMotorcycle);
     }
-    return of(this.motors);
+    return of(undefined);
   }
   //Delete: Remove a user by ID
-  deleteMotorcycle(motorcycleId: number): Observable<Motorcycle[]> {
-    this.motors = this.motors.filter(user => user.id !== motorcycleId);
-    return of(this.motors);
-  }
+
   getMotorcycleById(motorcycleId: number): Observable<Motorcycle | undefined> {
-    const motorcycle = this.motors.find(motorcycle => motorcycle.id === motorcycleId);
-    return of(motorcycle);
+    return of(this.motors.find(motorcycle => motorcycle.id === motorcycleId));
+  }
+
+  generateNewId() {
+    return this.motors.length >0 ? Math.max(...this.motors.map(user => user.id)) +1 : 1;
   }
 }
 
