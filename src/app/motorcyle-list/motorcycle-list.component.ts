@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Motorcycle} from "../../Shared/models/motorcycle";
 import {MotorcycleListItemComponent} from "../motorcycle-list-item/motorcycle-list-item.component";
-import {NgClass, NgForOf} from "@angular/common";
+import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {MotorcycleService} from "../Services/motorcycle.service";
 import {motorcycleList} from "../../Shared/data/mock-motorcycle";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Router, RouterLink} from "@angular/router";
 
 
 @Component({
@@ -12,26 +12,35 @@ import {ActivatedRoute, Router} from "@angular/router";
   standalone: true,
   imports: [
     MotorcycleListItemComponent,
+    RouterLink,
     NgClass,
-    NgForOf
+    NgForOf,
+    NgIf
   ],
   templateUrl: './motorcycle-list.component.html',
   styleUrl: './motorcycle-list.component.css'
 })
 export class MotorcycleListComponent implements OnInit{
- motorcycleList: Motorcycle[]=[]
+ motorcycleList: Motorcycle[]=[];
+ error : string | null = null;
 
-  constructor(
-    private motorcycleService: MotorcycleService,
-    private router :Router
-  ) {
+
+  constructor(private motorcycleService: MotorcycleService,
+              private router: Router) {
   }
+
   ngOnInit(){
    this.motorcycleService.getMyMotorcycle().subscribe({
-     next:(data: Motorcycle[]) => this.motorcycleList = data ,
-     error: err => console.error("Error in motorcycle",err),
-     complete:() => console.log("All list of motorcycle"),
-   })
+     next:(data: Motorcycle[]) => {
+       this.motorcycleList = data;
+       this.error =null;
+   },
+     error: err => {
+       this.error = 'Error fetching motorcycle';
+       console.error("Error fetching Motorcycle",err);
+     },
+     complete: () => console.log("Motorycle data fetch complete!")
+  });
   }
 
   delete(id: Number):void {

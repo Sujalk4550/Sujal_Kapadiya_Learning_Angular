@@ -5,6 +5,7 @@ import {Observable} from "rxjs";
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb():{motorcycle: Motorcycle[]} {
+
    const motorcycle: Motorcycle[] = [
     {
       id: 1,

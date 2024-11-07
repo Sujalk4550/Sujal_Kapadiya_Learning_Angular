@@ -8,7 +8,7 @@ import {HttpClient, HttpErrorResponse} from "@angular/common/http";
   providedIn: 'root'
 })
 export class MotorcycleService {
-  private apiUrl = 'api/students';
+  private apiUrl = 'api/motorcycle';
   private  motors: Motorcycle[] = motorcycleList;
 
   constructor(private http: HttpClient) { }
@@ -27,7 +27,7 @@ export class MotorcycleService {
   }
 
 
-  getMotorcycleById(motorcycleId: number): Observable<Motorcycle> {
+  getMotorcycleById(motorcycleId: string): Observable<Motorcycle> {
     return this.http.get<Motorcycle>(`${this.apiUrl}/${motorcycleId}`).pipe(catchError(this.handleError));
   }
 

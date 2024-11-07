@@ -12,7 +12,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let motorcycle of motorcycleList">
+    <tr *ngFor="let motorcycle of motorcycleList" [routerLink]="['/motorcycle',motorcycle.id]" >
       <td>{{motorcycle.id}}</td>
       <td>{{motorcycle.brand}}</td>
       <td>{{motorcycle.name}}</td>
@@ -24,4 +24,5 @@
     </tr>
     </tbody>
   </table>
+  <div *ngIf="error" class="error">{{error}}</div>
 </div>
