@@ -1,1 +1,37 @@
-<p>modify-motor works!</p>
+
+<form [formGroup]="motorcycleForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="id">ID</label>
+    <input type="number" id="id" formControlName="id" />
+  </div>
+
+  <div class="form-group">
+    <label for="brand">BRAND</label>
+    <input type="text" id="brand" formControlName="brand" />
+  </div>
+
+  <div class="form-group">
+    <label for="name">NAME</label>
+    <input type="text" id="name" formControlName="name" />
+  </div>
+
+  <div class="form-group">
+    <label for="colour">COLOUR</label>
+    <input type="text" id="colour" formControlName="colour" />
+  </div>
+
+  <div class="form-group">
+    <label for="type">TYPE</label>
+    <input type="text" id="type" formControlName="type" />
+  </div>
+
+  <div class="form-group">
+    <label for="petrol">PETROL</label>
+    <input type="checkbox" id="petrol" formControlName="petrol" />
+  </div>
+
+
+  <button type="submit">Submit</button>
+
+
+</form>

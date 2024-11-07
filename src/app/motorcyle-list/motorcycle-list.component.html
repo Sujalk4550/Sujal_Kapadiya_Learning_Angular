@@ -19,6 +19,8 @@
       <td>{{motorcycle.colour}}</td>
       <td>{{motorcycle.type}}</td>
       <td>{{motorcycle.petrol}}</td>
+      <button type="button" (click)="delete(motorcycle.id)">DELETE</button>
+      <button type="button" (click)="update()">EDIT</button>
     </tr>
     </tbody>
   </table>
