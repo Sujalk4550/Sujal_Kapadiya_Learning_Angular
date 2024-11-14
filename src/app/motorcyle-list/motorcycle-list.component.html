@@ -5,19 +5,23 @@
     <tr>
       <th>ID</th>
       <th>BRAND</th>
+      <th>DATE</th>
       <th>NAME</th>
       <th>COLOUR</th>
       <th>TYPE</th>
+      <th>COST</th>
       <th>PETROL</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let motorcycle of motorcycleList" [routerLink]="['/motorcycle',motorcycle.id]" >
       <td>{{motorcycle.id}}</td>
-      <td>{{motorcycle.brand}}</td>
+      <td>{{motorcycle.brand | uppercase}}</td>
+      <td>{{motorcycle.date | date : 'longDate'}}</td>
       <td>{{motorcycle.name}}</td>
       <td>{{motorcycle.colour}}</td>
       <td>{{motorcycle.type}}</td>
+      <td>{{motorcycle.cost | currency : 'CAD'}}</td>
       <td>{{motorcycle.petrol}}</td>
       <button type="button" (click)="delete(motorcycle.id)">DELETE</button>
       <button type="button" (click)="update()">EDIT</button>

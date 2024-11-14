@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Motorcycle} from "../../Shared/models/motorcycle";
 import {MotorcycleListItemComponent} from "../motorcycle-list-item/motorcycle-list-item.component";
-import {NgClass, NgForOf, NgIf} from "@angular/common";
+import {CurrencyPipe, DatePipe, NgClass, NgForOf, NgIf, UpperCasePipe} from "@angular/common";
 import {MotorcycleService} from "../Services/motorcycle.service";
 import {motorcycleList} from "../../Shared/data/mock-motorcycle";
 import {ActivatedRoute, Router, RouterLink} from "@angular/router";
@@ -15,7 +15,10 @@ import {ActivatedRoute, Router, RouterLink} from "@angular/router";
     RouterLink,
     NgClass,
     NgForOf,
-    NgIf
+    NgIf,
+    UpperCasePipe,
+    DatePipe,
+    CurrencyPipe
   ],
   templateUrl: './motorcycle-list.component.html',
   styleUrl: './motorcycle-list.component.css'
