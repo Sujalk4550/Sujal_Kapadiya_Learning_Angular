@@ -5,6 +5,7 @@ import {CurrencyPipe, DatePipe, NgClass, NgForOf, NgIf, UpperCasePipe} from "@an
 import {MotorcycleService} from "../Services/motorcycle.service";
 import {motorcycleList} from "../../Shared/data/mock-motorcycle";
 import {ActivatedRoute, Router, RouterLink} from "@angular/router";
+import {BikeTypePipe} from "../pipes/bike-type.pipe";
 
 
 @Component({
@@ -18,7 +19,8 @@ import {ActivatedRoute, Router, RouterLink} from "@angular/router";
     NgIf,
     UpperCasePipe,
     DatePipe,
-    CurrencyPipe
+    CurrencyPipe,
+    BikeTypePipe
   ],
   templateUrl: './motorcycle-list.component.html',
   styleUrl: './motorcycle-list.component.css'

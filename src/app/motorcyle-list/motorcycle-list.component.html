@@ -7,8 +7,7 @@
       <th>BRAND</th>
       <th>DATE</th>
       <th>NAME</th>
-      <th>COLOUR</th>
-      <th>TYPE</th>
+      <th>BIKE TYPE</th>
       <th>COST</th>
       <th>PETROL</th>
     </tr>
@@ -19,8 +18,7 @@
       <td>{{motorcycle.brand | uppercase}}</td>
       <td>{{motorcycle.date | date : 'longDate'}}</td>
       <td>{{motorcycle.name}}</td>
-      <td>{{motorcycle.colour}}</td>
-      <td>{{motorcycle.type}}</td>
+      <td>{{motorcycle | bikeType }}</td>
       <td>{{motorcycle.cost | currency : 'CAD'}}</td>
       <td>{{motorcycle.petrol}}</td>
       <button type="button" (click)="delete(motorcycle.id)">DELETE</button>

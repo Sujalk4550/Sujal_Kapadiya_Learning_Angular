@@ -13,7 +13,7 @@ export class InMemoryDataService implements InMemoryDbService {
       date: new Date('2023-03-12'),
       name: "Street Glide",
       colour: "Red",
-      type: "Touring",
+      type: "Touring Bike",
       petrol: true,
       cost  : 22000,
       image: "src/assets/Img1-Harley.jpg"
@@ -35,7 +35,7 @@ export class InMemoryDataService implements InMemoryDbService {
       date: new Date('2020-09-04'),
       name: "R1250 GS",
       colour: "White",
-      type: "Adventure",
+      type: "Adventure Bike",
       petrol: false,
       cost: 15000,
       image: "/assets/Img3-BMW.jpg"
@@ -46,7 +46,7 @@ export class InMemoryDataService implements InMemoryDbService {
       date : new Date('2024-08-23'),
       name: "Scrambler Icon",
       colour: "Yellow",
-      type: "Scrambler",
+      type: "Scrambler Bike",
       petrol: true,
       cost : 300000,
       image: "/assets/Img4-Ducati.jpg"
