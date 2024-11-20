@@ -75,21 +75,21 @@ tr:hover {
   font-size: 14px;
 }
 
-.delete-button {
-  background-color: #e74c3c;
-}
+/*.delete-button {*/
+/*  background-color: #e74c3c;*/
+/*}*/
 
-.delete-button:hover {
-  background-color: #c0392b;
-}
+/*.delete-button:hover {*/
+/*  background-color: #c0392b;*/
+/*}*/
 
-.edit-button {
-  background-color: #3498db;
-}
+/*.edit-button {*/
+/*  background-color: #3498db;*/
+/*}*/
 
-.edit-button:hover {
-  background-color: #2980b9;
-}
+/*.edit-button:hover {*/
+/*  background-color: #2980b9;*/
+/*}*/
 
 a {
   text-decoration: none;

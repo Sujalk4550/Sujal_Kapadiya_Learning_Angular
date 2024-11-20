@@ -6,6 +6,7 @@ import {MotorcycleService} from "../Services/motorcycle.service";
 import {motorcycleList} from "../../Shared/data/mock-motorcycle";
 import {ActivatedRoute, Router, RouterLink} from "@angular/router";
 import {BikeTypePipe} from "../pipes/bike-type.pipe";
+import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
 
 
 @Component({
@@ -20,7 +21,8 @@ import {BikeTypePipe} from "../pipes/bike-type.pipe";
     UpperCasePipe,
     DatePipe,
     CurrencyPipe,
-    BikeTypePipe
+    BikeTypePipe,
+    HoverHighlightDirective
   ],
   templateUrl: './motorcycle-list.component.html',
   styleUrl: './motorcycle-list.component.css'

@@ -13,7 +13,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let motorcycle of motorcycleList" [routerLink]="['/motorcycle',motorcycle.id]" >
+    <tr *ngFor="let motorcycle of motorcycleList" [routerLink]="['/motorcycle',motorcycle.id]" [appHoverHighlight]="'lightblue'" >
       <td>{{motorcycle.id}}</td>
       <td>{{motorcycle.brand | uppercase}}</td>
       <td>{{motorcycle.date | date : 'longDate'}}</td>
@@ -21,8 +21,8 @@
       <td>{{motorcycle | bikeType }}</td>
       <td>{{motorcycle.cost | currency : 'CAD'}}</td>
       <td>{{motorcycle.petrol}}</td>
-      <button type="button" (click)="delete(motorcycle.id)">DELETE</button>
-      <button type="button" (click)="update()">EDIT</button>
+      <button type="button" (click)="delete(motorcycle.id)" [appHoverHighlight]="'purple'">DELETE</button>
+      <button type="button" (click)="update()"[appHoverHighlight]="'yellow'">EDIT</button>
     </tr>
     </tbody>
   </table>
