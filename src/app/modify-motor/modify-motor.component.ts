@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {MotorcycleService} from "../Services/motorcycle.service";
 import {Motorcycle} from "../../Shared/models/motorcycle";
 import {NgIf} from "@angular/common";
+import {HighlightOnFocusDirective} from "../directives/highlight-on-focus.directive";
 
 
 @Component({
@@ -12,7 +13,8 @@ import {NgIf} from "@angular/common";
   imports: [
     ReactiveFormsModule,
     FormsModule,
-    NgIf
+    NgIf,
+    HighlightOnFocusDirective
   ],
   templateUrl: './modify-motor.component.html',
   styleUrl: './modify-motor.component.css'
